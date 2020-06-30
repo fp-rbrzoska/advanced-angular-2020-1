@@ -5,4 +5,10 @@
     <a class="nav-link nav-item" routerLink="/demo">Demo</a>
     <a class="nav-link nav-item" routerLink="/products">Products</a>
   </div>
+  <div>
+    <button *ngIf="isLoggedIn$ | async; else login" class="btn btn-danger" (click)="logOut()">LogOut</button>
+    <ng-template #login>
+      <button  class="btn btn-info" (click)="logIn()">LogIn</button>
+    </ng-template>
+  </div>
 </nav>

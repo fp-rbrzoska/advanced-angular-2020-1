@@ -10,7 +10,6 @@ export class TestDirective {
   }
   @HostListener('mouseover')
   mouseOverFn() {
-    console.log('test')
     this.renderer.setStyle(this.el.nativeElement, 'background-color', this.fpTest || 'blue');
   }
 

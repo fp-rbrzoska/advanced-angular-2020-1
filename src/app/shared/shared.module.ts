@@ -4,15 +4,16 @@ import { TestDirective } from './test.directive';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { HighlightDirective } from './highlight.directive';
 import { CommonItemComponent } from './common-item/common-item.component';
+import { OnlyForAuthorizedDirective } from './only-for-authorized.directive';
 
 
 
 @NgModule({
-  declarations: [TestDirective, HighlightDirective, CommonItemComponent],
+  declarations: [TestDirective, HighlightDirective, CommonItemComponent, OnlyForAuthorizedDirective],
   imports: [
     CommonModule,
-    AccordionModule.forRoot()
+    AccordionModule
   ],
-  exports: [TestDirective, AccordionModule, HighlightDirective, CommonItemComponent]
+  exports: [TestDirective, AccordionModule, HighlightDirective, CommonItemComponent, OnlyForAuthorizedDirective]
 })
 export class SharedModule { }
