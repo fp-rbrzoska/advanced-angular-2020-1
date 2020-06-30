@@ -1,0 +1,20 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductsItemComponent } from './products-item/products-item.component';
+import { ProductsRoutingModule } from './products-routing.module';
+import { ProductsService } from './products.service';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+@NgModule({
+  declarations: [ProductsListComponent, ProductsItemComponent],
+  imports: [
+    CommonModule,
+    ProductsRoutingModule,
+    HttpClientModule
+  ],
+  providers: [ProductsService]
+})
+export class ProductsModule { }

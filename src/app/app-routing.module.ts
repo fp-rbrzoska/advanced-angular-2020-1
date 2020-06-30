@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './main/page-not-found/page-not-found.comp
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'demo', loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule) },
+  { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
   { path: '**', component: PageNotFoundComponent }
 ];
 
