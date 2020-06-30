@@ -12,6 +12,6 @@ import { HighlightDirective } from './highlight.directive';
     CommonModule,
     AccordionModule.forRoot()
   ],
-  exports: [TestDirective, AccordionModule]
+  exports: [TestDirective, AccordionModule, HighlightDirective]
 })
 export class SharedModule { }
