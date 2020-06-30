@@ -6,7 +6,7 @@ import { Directive, ElementRef, Renderer2, Input, HostListener } from '@angular/
 export class HighlightDirective {
 
   @Input() fpHighlight;
-  private hasClass = false;
+  hasClass = false;
 
   constructor(private el: ElementRef, private renderer: Renderer2 ) {
   }
@@ -14,11 +14,19 @@ export class HighlightDirective {
   @HostListener('click')
   clickFn() {
     if(!this.hasClass) {
-      this.renderer.addClass(this.el.nativeElement, this.fpHighlight || 'highlight');
+      this.setClass()
       this.hasClass = true;
     } else {
-      this.renderer.removeClass(this.el.nativeElement, this.fpHighlight || 'highlight');
+      this.unsetClass()
       this.hasClass = false;
     }
+  }
+
+  setClass() {
+    this.renderer.addClass(this.el.nativeElement, this.fpHighlight || 'highlight');
+  }
+
+  unsetClass() {
+    this.renderer.removeClass(this.el.nativeElement, this.fpHighlight || 'highlight');
   }
 }
