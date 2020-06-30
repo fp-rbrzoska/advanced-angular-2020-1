@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { DemoData } from '../models/demo-data';
 import { TestDirective } from '../shared/test.directive';
 import { HighlightDirective } from '../shared/highlight.directive';
+import { ProductsService } from '../products/products.service';
 
 @Component({
   selector: 'fp-demo',
@@ -17,6 +18,7 @@ export class DemoComponent implements OnInit, AfterViewInit {
 
   demoData$: Observable<DemoData[]>;
   constructor(private demoService: DemoService) {
+    console.log(demoService)
     this.demoData$ = this.demoService.demoData$;
     this.demoService.fetchData();
   }
