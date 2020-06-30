@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ProductsService {
 
-  productsSubj = new BehaviorSubject<Product[]>(null);
+  private productsSubj = new BehaviorSubject<Product[]>(null);
   products$ = this.productsSubj.asObservable();
 
   constructor(private http: HttpClient) { }
