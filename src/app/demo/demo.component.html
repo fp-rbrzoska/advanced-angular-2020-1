@@ -1,4 +1,11 @@
+
+<fp-common-item class="mb-3 d-block">
+  <span class="common-item-title" #title>My title</span>
+  <p class="common-item-content">My content</p>
+</fp-common-item>
+
 <button class="btn btn-warning" (click)="selectAll()" #elementList>Select all</button>
+
 <div class="list-group" *ngIf="demoData$ | async as demoData; else loader" >
   <div  *ngFor="let item of demoData" fpHighlight="selected-demo" class="list-group-item list-group-item-action flex-column align-items-start mb-1">
     <div class="d-flex w-100 justify-content-between">
